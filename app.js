@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './Counter';
+import TodoList from './TodoList';
+import TodoStore from './TodoStore';
+
+const observableTodoStore = new TodoStore();
 
 ReactDOM.render(
-  <Counter />,
-  document.getElementById('root')
+  <TodoList store={ observableTodoStore } />,
+  document.getElementById('reactjs-app')
 );
