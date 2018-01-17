@@ -1,11 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TodoList from './TodoList';
-import TodoStore from './TodoStore';
+import React from "react";
+import { render } from "react-dom";
+import { observable, action } from "mobx";
+import { observer } from "mobx-react";
 
-const observableTodoStore = new TodoStore();
+class AppState {
+  @observable timer = 0;
 
-ReactDOM.render(
-  <TodoList store={ observableTodoStore } />,
-  document.getElementById('reactjs-app')
+  constructor() {
+    setInterval(() => {
+      this.timer += 1;
+    }, 1000);
+  }
+
+  @action.bound
+  reset() {
+    this.timer = 0;
+  }
+}
+
+const TimerView = observer(({ appState }) => (
+  <button onClick={appState.reset}>Seconds passed: {appState.timer}</button>
+));
+
+render(
+  <div>
+    <TimerView appState={new AppState()} />
+  </div>,
+  document.getElementById("root")
 );
