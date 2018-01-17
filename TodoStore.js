@@ -1,25 +1,16 @@
-import { extendObservable, computed } from 'mobx';
+import { observer, computed } from 'mobx';
 
 export default class ObservableTodoStore {
-	todos = [];
-  pendingRequests = 0;
+	@observer todos = [];
+  @observer pendingRequests = 0;
 
-  constructor() {
-    extendObservable(this, {
-      todos: this.todos,
-      pendingRequests: this.pendingRequests,
-      completedTodosCount: computed(this.completedTodosCount),
-      report: computed(this.report),
-    });
-  }
-
-	completedTodosCount() {
+	@computed get completedTodosCount() {
     	return this.todos.filter(
 			todo => todo.completed === true
 		).length;
     }
 
-	report() {
+	@computed get report() {
 		if (this.todos.length === 0)
 			return "<none>";
 		return `Next todo: "${this.todos[0].task}". ` +
