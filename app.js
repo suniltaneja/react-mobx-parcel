@@ -5,10 +5,12 @@ import CounterStore from './CounterStore';
 import TimerView from './TimerView';
 import CounterView from './CounterView';
 
+const counterStore = new CounterStore();
+
 render(
   <div>
     <TimerView appState={new AppState()} />
-    <CounterView store={new CounterStore()} />
+    <CounterView store={counterStore} />
   </div>,
   document.getElementById("root")
 );
