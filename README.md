@@ -20,3 +20,4 @@ All you have to do to add additional Babel transformations is add them to `packa
 ## License
 
 MIT
+# react-mobx-parcel-playground
