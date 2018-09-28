@@ -1,6 +1,19 @@
 .border-bold{
-    width:900px;
+    width:auto; 
     margin: 0 auto;
     padding: 10px;
-    border: 1px steelblue solid;
+    border: 0px steelblue solid;
 }
+
+.filter-container{
+    padding: 10px;
+    border: 1px #ccc solid;
+    margin: 0 0 10px 0;
+    border-radius: 7px;
+}
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    font-size: 14px;
+  }
