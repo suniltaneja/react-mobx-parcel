@@ -1,6 +1,6 @@
 .border-bold{
-    width:auto; 
-    margin: 0 auto;
+    // width:auto; 
+    // margin: 0 auto;
     padding: 10px;
     border: 0px steelblue solid;
 }
@@ -17,3 +17,7 @@ body {
     font-weight: 300;
     font-size: 14px;
   }
+
+.pagination-bottom{
+    height: 40px;
+}

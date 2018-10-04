@@ -6,6 +6,8 @@ import TodoApp from './Todo';
 import QueryFilter from './src/QueryFilter';
 import ResultsTable from './src/ResultsTable';
 import Nav from './src/Nav';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 import './sass/custom.scss'
 
 const counterStore = new CounterStore();
@@ -19,8 +21,10 @@ render(
 
       {/* <Nav /> */}
       <QueryFilter />
+
       <ResultsTable />
-      <TodoApp />
+      
+      {/* <TodoApp /> */}
     </div>
 
 

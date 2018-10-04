@@ -18,7 +18,8 @@ export default class ResultsTable extends React.Component {
       return (
         <div>
           <ReactTable
-            data={data}
+            data={data} 
+            filterable={true}
             columns={[
               {
                 Header: "Name",
@@ -57,7 +58,7 @@ export default class ResultsTable extends React.Component {
                 ]
               }
             ]}
-            defaultPageSize={15}
+            defaultPageSize={25}
             className="-highlight"
           />
           <br />
